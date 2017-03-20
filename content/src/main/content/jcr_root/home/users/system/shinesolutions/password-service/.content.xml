@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:rep="internal"
+    jcr:primaryType="rep:SystemUser"
+    jcr:uuid="8da5aea0-0eb6-3104-b792-22cbd44bd273"
+    rep:authorizableId="shinesolutions-password-service"
+    rep:principalName="shinesolutions-password-service"/>
