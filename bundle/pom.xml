@@ -114,7 +114,6 @@
                 <configuration>
                     <instructions>
                         <Bundle-SymbolicName>com.shinesolutions.aem.passwordreset</Bundle-SymbolicName>
-
                     </instructions>
                 </configuration>
             </plugin>
@@ -129,14 +128,15 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                 <configuration>
-                    <excludePackageNames>
-                        *.impl
-                    </excludePackageNames>
-                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
-
-
 </project>
