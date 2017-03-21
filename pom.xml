@@ -10,6 +10,7 @@
     <version>1.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+    <name>AEM Password Reset - Reactor Project</name>
     <description>Maven Multimodule project for AEM Password Reset.</description>
     <url>https://github.com/shinesolutions/aem-password-reset</url>
 

@@ -16,6 +16,7 @@
 
     <artifactId>aem-password-reset-content</artifactId>
     <packaging>content-package</packaging>
+    <name>AEM Password Reset Content Package</name>
 
     <dependencies>
         <dependency>
