@@ -7,7 +7,7 @@
 
     <groupId>com.shinesolutions</groupId>
     <artifactId>aem-password-reset</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <description>Maven Multimodule project for AEM Password Reset.</description>
@@ -17,7 +17,7 @@
         <connection>scm:git:git@github.com:shinesolutions/aem-password-reset.git</connection>
         <developerConnection>scm:git:git@github.com:shinesolutions/aem-password-reset.git</developerConnection>
         <url>https://github.com/shinesolutions/aem-password-reset</url>
-      <tag>v1.0.0</tag>
+      <tag>HEAD</tag>
   </scm>
 
     <distributionManagement>
