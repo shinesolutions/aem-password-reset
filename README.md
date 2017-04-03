@@ -32,6 +32,21 @@ The contents of `logs/error.log` should look something like this:
 20.03.2017 16:32:40.367 *INFO* [OsgiInstallerImpl] org.apache.sling.audit.osgi.installer Uninstalled bundle com.shinesolutions.aem.passwordreset [471] from resource TaskResource(url=jcrinstall:/apps/aem-password-reset/install/aem-password-reset-bundle-0.0.1-SNAPSHOT.jar, entity=bundle:com.shinesolutions.aem.passwordreset, state=UNINSTALL, attributes=[org.apache.sling.installer.api.tasks.ResourceTransformer=:24:21:, Bundle-SymbolicName=com.shinesolutions.aem.passwordreset, Bundle-Version=0.0.1.SNAPSHOT], digest=1489987539235)
 ```
 
+## Resetting additional passwords
+
+This bundle activator may take a pre-configured list of authorizable IDs via an OSGi configuration file.
+
+/apps/system/config/com.shinesolutions.aem.passwordreset.Activator:
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="sling:OsgiConfig"
+    pwdreset.authorizables="[admin,deployer,importer]"/>
+```
+With this configuration, the password for `deployer` will be reset to `deployer`, the password for `importer` will be reset to `importer`, etc.
+
+Note: a change to the OSGI configuration *will* trigger a restart of the bundle which and reset the passwords.
+
 ## Building
 
 This project uses Maven for building. Common commands:
