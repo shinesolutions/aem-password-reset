@@ -16,7 +16,7 @@
 
     <artifactId>aem-password-reset-bundle</artifactId>
     <packaging>bundle</packaging>
-    <name>AEM Project World - Bundle</name>
+    <name>AEM Password Reset - Bundle</name>
 
     <dependencies>
         <dependency>
