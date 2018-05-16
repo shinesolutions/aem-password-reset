@@ -1,10 +1,12 @@
-# Reset Password for Admin User AEM 6.2
+# Reset Password for Admin User AEM 6.3
 
 [![Build Status](https://travis-ci.org/shinesolutions/aem-password-reset.svg?branch=master)](https://travis-ci.org/shinesolutions/aem-password-reset)
 
 This application resets the admin password to the default value without the existing password.
 
 ## Usage
+
+If using AEM 6.3, first drop `passwordreset-whitelist-config-1.0.zip` into `<aem-home>/crx-quickstart/install` (create the `install` folder if it doesn't exist). This will add com.shinesolutions.aem.passwordreset to the whitelist of bundles allowed to do administrative login. See [sling documentation](https://sling.apache.org/documentation/the-sling-engine/service-authentication.html#whitelisting-bundles-for-administrative-login) for details.
 
 Drop `aem-password-reset-content-<version>.zip` into `<aem-home>/crx-quickstart/install` (create the `install` folder if it isn't there).
 
