@@ -6,16 +6,13 @@ This application resets the admin password to the default value without the exis
 
 ## Usage
 
-If using AEM 6.3 or later, then drop `passwordreset-whitelist-config-1.0.zip` into `<aem-home>/crx-quickstart/install` (create the `install` folder if it doesn't exist). This will add com.shinesolutions.aem.passwordreset to the whitelist of bundles allowed to do administrative login. See [sling documentation](https://sling.apache.org/documentation/the-sling-engine/service-authentication.html#whitelisting-bundles-for-administrative-login) for details. If this is not done, the passwordreset bundle will fail, with the error:
-
-```
-com.shinesolutions.aem.passwordreset.Activator Could not login to the repository
-org.apache.sling.api.resource.LoginException: Bundle com.shinesolutions.aem.passwordreset is NOT whitelisted
-```
 
 Drop `aem-password-reset-content-<version>.zip` into `<aem-home>/crx-quickstart/install` (create the `install` folder if it isn't there).
 
 The bundle contains an activator that will execute as soon as the bundle is installed (see `Activator.java`).
+
+The org.apache.sling.jcr.base.internal.LoginAdminWhitelist.fragment-passwordreset.config is getting used to whitelist the bundle for admin session.
+
 The contents of `logs/error.log` should look something like this:
 
 ```

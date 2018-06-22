@@ -1,3 +1,6 @@
+### 1.1.0
+* Added whitelist config, it's required to use the admin session from Adobe's 6.3 version. 
+
 ### 1.0.2
 * Specified vendor property for bundle and services
 * Fixes bundle project name
