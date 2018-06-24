@@ -4,14 +4,19 @@
 
 This application resets the admin password to the default value without the existing password.
 
-## Usage
+## Supported AEM versions
 
+| AEM | Password Reset |
+|--|--|
+| 6.4 | 1.1.x |
+| 6.3 | 1.0.x |
+| 6.2 | 1.0.x |
+
+## Usage
 
 Drop `aem-password-reset-content-<version>.zip` into `<aem-home>/crx-quickstart/install` (create the `install` folder if it isn't there).
 
 The bundle contains an activator that will execute as soon as the bundle is installed (see `Activator.java`).
-
-The org.apache.sling.jcr.base.internal.LoginAdminWhitelist.fragment-passwordreset.config is getting used to whitelist the bundle for admin session.
 
 The contents of `logs/error.log` should look something like this:
 
@@ -49,7 +54,7 @@ This bundle activator may take a pre-configured list of authorizable IDs via an 
 ```
 With this configuration, the password for `deployer` will be reset to `deployer`, the password for `importer` will be reset to `importer`, etc.
 
-Note: a change to the OSGI configuration *will* trigger a restart of the bundle which and reset the passwords.
+Note: a change to the OSGI configuration *will* trigger a restart of the bundle which will reset the passwords.
 
 ## Building
 

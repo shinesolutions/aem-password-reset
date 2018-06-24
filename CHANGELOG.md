@@ -1,5 +1,5 @@
 ### 1.1.0
-* Added whitelist config, it's required to use the admin session from Adobe's 6.3 version. 
+* Added bundle whitelist config (required to use the admin session from AEM 6.4)
 
 ### 1.0.2
 * Specified vendor property for bundle and services
