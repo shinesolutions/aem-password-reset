@@ -57,19 +57,6 @@ public class Activator implements BundleActivator {
 
         Session session = null;
         try {
-            /*
-             * We should be using a system user for this but currently getting a
-             * `org.apache.jackrabbit.oak.api.CommitFailedException: OakAccess0000: Access denied`
-             * when attempting to change the admin password using a system user with ALL permissions granted.
-             *
-             * The system user "shinesolutions-password-service" is included as part of this source code and should be
-             * used like so once the permission issue is resolved:
-             * <code>
-             *     ResourceResolver resolver = resolverFactory.getServiceResourceResolver(new HashMap<String, Object>() {{
-             *       put(ResourceResolverFactory.SUBSERVICE, "password-service");
-             *     }});
-             * </code>
-             */
             ResourceResolver resolver = resolverFactory.getAdministrativeResourceResolver(null);
 
             UserManager userManager = resolver.adaptTo(UserManager.class);
