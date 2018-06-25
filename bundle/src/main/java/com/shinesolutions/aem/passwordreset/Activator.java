@@ -62,7 +62,7 @@ public class Activator implements BundleActivator {
 
 
         if(properties != null) {
-            authorizableIds = PropertiesUtil.toStringArray(properties.get(AUTHORIZABLE_IDS));;
+            authorizableIds = PropertiesUtil.toStringArray(properties.get(AUTHORIZABLE_IDS));
         } else {
             authorizableIds = new String[]{DEFAULT_AUTHORIZABLE};
         }
