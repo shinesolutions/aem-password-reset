@@ -18,11 +18,13 @@ import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 import java.util.Hashtable;
 
+
 import static org.mockito.AdditionalMatchers.not;
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.*;
 
 public class ActivatorTest {
+
 
     @Mock
     private BundleContext mockBundleContext;
@@ -110,6 +112,7 @@ public class ActivatorTest {
 
     @Test
     public void testSessionSaveError() throws Exception {
+
         when(mockUserManager.getAuthorizable(anyString())).thenReturn(mockAuthorizable);
         when(mockUserManager.isAutoSave()).thenReturn(true);
         doThrow(new RepositoryException()).when(mockSession).save();
@@ -136,6 +139,7 @@ public class ActivatorTest {
 
     @Test
     public void testPasswordChangeMultipleIDs() throws Exception {
+
         when(mockConfiguration.getProperties()).thenReturn(new Hashtable(){{
             put(Activator.AUTHORIZABLE_IDS, new String[]{"deployer", "importer"});
         }});

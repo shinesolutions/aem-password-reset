@@ -1,7 +1,10 @@
 package com.shinesolutions.aem.passwordreset;
 
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
+import org.osgi.service.component.annotations.Activate;
+import org.osgi.service.component.annotations.Deactivate;
 
-import org.apache.felix.scr.annotations.*;
 import org.apache.jackrabbit.api.security.user.Authorizable;
 import org.apache.jackrabbit.api.security.user.User;
 import org.apache.jackrabbit.api.security.user.UserManager;
@@ -25,16 +28,23 @@ import java.util.Dictionary;
  * OSGi configuration. If no configuration is specified, it will reset the password of the admin user only.
  */
 @Component(immediate = true)
+
 public class Activator implements BundleActivator {
 
-    @Reference
-    protected ResourceResolverFactory resolverFactory;
+
+    protected static final String AUTHORIZABLE_IDS="pwdreset.authorizables";
+    ResourceResolverFactory resolverFactory;
+    ConfigurationAdmin configurationAdmin;
 
     @Reference
-    protected ConfigurationAdmin configurationAdmin;
+    void setResourceResolverFactory(ResourceResolverFactory resolverFactory) {
+        this.resolverFactory = resolverFactory;
+    }
 
-    @Property(label = "Authorizable IDs", description = "The authorizable IDs that require a password reset")
-    protected static final String AUTHORIZABLE_IDS = "pwdreset.authorizables";
+    @Reference
+    void setConfigurationAdmin(ConfigurationAdmin configurationAdmin) {
+        this.configurationAdmin = configurationAdmin;
+    }
 
     private final String SERVICE_PID = getClass().getName();
     private static final String DEFAULT_AUTHORIZABLE = "admin";
@@ -47,10 +57,12 @@ public class Activator implements BundleActivator {
 
         // attempt to find a matching configuration for this service
         Configuration config = configurationAdmin.getConfiguration(SERVICE_PID);
+
         Dictionary<String, Object> properties = config.getProperties();
 
+
         if(properties != null) {
-            authorizableIds = PropertiesUtil.toStringArray(properties.get(AUTHORIZABLE_IDS));
+            authorizableIds = PropertiesUtil.toStringArray(properties.get(AUTHORIZABLE_IDS));;
         } else {
             authorizableIds = new String[]{DEFAULT_AUTHORIZABLE};
         }
