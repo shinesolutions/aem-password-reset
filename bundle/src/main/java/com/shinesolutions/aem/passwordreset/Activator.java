@@ -1,71 +1,38 @@
 package com.shinesolutions.aem.passwordreset;
 
-import org.osgi.service.component.annotations.Component;
-import org.osgi.service.component.annotations.Reference;
-import org.osgi.service.component.annotations.Activate;
-import org.osgi.service.component.annotations.Deactivate;
-
+import org.osgi.service.component.annotations.*;
 import org.apache.jackrabbit.api.security.user.Authorizable;
 import org.apache.jackrabbit.api.security.user.User;
 import org.apache.jackrabbit.api.security.user.UserManager;
 import org.apache.sling.api.resource.LoginException;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ResourceResolverFactory;
-import org.apache.sling.commons.osgi.PropertiesUtil;
-import org.osgi.framework.BundleActivator;
-import org.osgi.framework.BundleContext;
-import org.osgi.service.cm.Configuration;
-import org.osgi.service.cm.ConfigurationAdmin;
+import org.osgi.service.metatype.annotations.Designate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
-import java.util.Dictionary;
 
 /**
- * This bundle activator resets the password of the authorizable IDs specified in the corresponding
+ * This activator resets the password of the authorizable IDs specified in the corresponding
  * OSGi configuration. If no configuration is specified, it will reset the password of the admin user only.
  */
 @Component(immediate = true)
+@Designate(ocd = ActivatorConfiguration.class)
+public class Activator {
 
-public class Activator implements BundleActivator {
-
-
-    protected static final String AUTHORIZABLE_IDS="pwdreset.authorizables";
-    ResourceResolverFactory resolverFactory;
-    ConfigurationAdmin configurationAdmin;
-
-    @Reference
-    void setResourceResolverFactory(ResourceResolverFactory resolverFactory) {
-        this.resolverFactory = resolverFactory;
-    }
-
-    @Reference
-    void setConfigurationAdmin(ConfigurationAdmin configurationAdmin) {
-        this.configurationAdmin = configurationAdmin;
-    }
-
-    private final String SERVICE_PID = getClass().getName();
-    private static final String DEFAULT_AUTHORIZABLE = "admin";
+    protected ResourceResolverFactory resolverFactory;
 
     private static final Logger log = LoggerFactory.getLogger(Activator.class);
 
+    @Reference
+    protected void setResourceResolverFactory(ResourceResolverFactory resolverFactory) {
+        this.resolverFactory = resolverFactory;
+    }
+
     @Activate
-    public void start(BundleContext bundleContext) throws Exception {
-        String[] authorizableIds;
-
-        // attempt to find a matching configuration for this service
-        Configuration config = configurationAdmin.getConfiguration(SERVICE_PID);
-
-        Dictionary<String, Object> properties = config.getProperties();
-
-
-        if(properties != null) {
-            authorizableIds = PropertiesUtil.toStringArray(properties.get(AUTHORIZABLE_IDS));
-        } else {
-            authorizableIds = new String[]{DEFAULT_AUTHORIZABLE};
-        }
+    public void start(ActivatorConfiguration config) {
+        String[] authorizableIds = config.pwdreset_authorizables();
 
         Session session = null;
         try {
@@ -98,7 +65,4 @@ public class Activator implements BundleActivator {
             }
         }
     }
-
-    @Deactivate
-    public void stop(BundleContext bundleContext) throws Exception { }
 }
