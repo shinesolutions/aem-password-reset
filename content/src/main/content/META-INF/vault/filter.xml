@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
     <filter root="/apps/aem-password-reset"/>
-    <filter root="/home/users/system/shinesolutions"/>
-    <filter root="/rep:policy"/>
 </workspaceFilter>
