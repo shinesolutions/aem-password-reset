@@ -1,6 +1,7 @@
-# Reset Password for Admin User AEM 6.x
-
 [![Build Status](https://travis-ci.org/shinesolutions/aem-password-reset.svg?branch=master)](https://travis-ci.org/shinesolutions/aem-password-reset)
+[![Known Vulnerabilities](https://snyk.io/test/github/shinesolutions/aem-password-reset/badge.svg)](https://snyk.io/test/github/shinesolutions/aem-password-reset)
+
+# Reset Password for Admin User AEM 6.x
 
 This application resets the admin password to the default value without the existing password.
 
