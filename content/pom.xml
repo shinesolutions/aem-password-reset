@@ -107,7 +107,7 @@
                         <embedded>
                             <groupId>com.shinesolutions</groupId>
                             <artifactId>aem-password-reset-bundle</artifactId>
-                            <target>/apps/aem-password-reset/install</target>
+                            <target>/apps/aem-password-reset/install/21</target>
                         </embedded>
                     </embeddeds>
                     <targetURL>http://${crx.host}:${crx.port}/crx/packmgr/service.jsp</targetURL>
