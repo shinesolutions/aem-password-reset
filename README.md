@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/shinesolutions/aem-password-reset.svg?branch=master)](https://travis-ci.org/shinesolutions/aem-password-reset)
+[![Build Status](https://github.com/shinesolutions/aem-password-reset/workflows/CI/badge.svg)](https://github.com/shinesolutions/aem-password-reset/actions?query=workflow%3ACI)
 [![Known Vulnerabilities](https://snyk.io/test/github/shinesolutions/aem-password-reset/badge.svg)](https://snyk.io/test/github/shinesolutions/aem-password-reset)
 
 # Reset Password for Admin User AEM 6.x
