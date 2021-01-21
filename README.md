@@ -9,6 +9,7 @@ This application resets the admin password to the default value without the exis
 
 | AEM | Password Reset |
 |--|--|
+| 6.5 | 1.1.x |
 | 6.4 | 1.1.x |
 | 6.3 | 1.0.x |
 | 6.2 | 1.0.x |
