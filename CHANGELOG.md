@@ -1,3 +1,6 @@
+### Unreleased
+- Simplify GitHub Actions release workflows to not use custom action
+
 ### 1.1.0
 * Added bundle whitelist config (required to use the admin session from AEM 6.4)
 
