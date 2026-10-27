@@ -1,0 +1,30 @@
+{
+  "tagFormat": "aem-password-reset-{version}",
+  "resources": [
+    {
+      "path": "pom.xml",
+      "type": "text",
+      "params": {
+        "regex": "(?<=<artifactId>aem-password-reset</artifactId>\\s*<version>)[^<]+"
+      }
+    },
+    {
+      "path": "bundle/pom.xml",
+      "type": "text",
+      "params": {
+        "regex": "(?<=<artifactId>aem-password-reset</artifactId>\\s*<version>)[^<]+"
+      }
+    },
+    {
+      "path": "content/pom.xml",
+      "type": "text",
+      "params": {
+        "regex": "(?<=<artifactId>aem-password-reset</artifactId>\\s*<version>)[^<]+"
+      }
+    },
+    {
+      "path": "CHANGELOG.md",
+      "type": "keep-a-changelog"
+    }
+  ]
+}
