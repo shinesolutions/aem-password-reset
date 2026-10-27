@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [2.0.0] - 2026-10-27
 ### Added
 - Added Makefile targets for ci, clean, deps, build, install, release-test, publish, release-status, release-drop and release-major/minor/patch
 - Added Maven Central credentials to `.mvn/settings.xml`, read from environment variables
@@ -45,8 +45,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial version
 
-[Unreleased]: https://github.com/shinesolutions/aem-password-reset/compare/v1.1.1...HEAD
-[1.1.1]: https://github.com/shinesolutions/aem-password-reset/compare/v1.1.0...v1.1.1
-[1.1.0]: https://github.com/shinesolutions/aem-password-reset/compare/v1.0.2...v1.1.0
-[1.0.2]: https://github.com/shinesolutions/aem-password-reset/compare/v1.0.1...v1.0.2
-[1.0.1]: https://github.com/shinesolutions/aem-password-reset/compare/v1.0.0...v1.0.1
+[2.0.0]: https://github.com/shinesolutions/aem-password-reset/compare/aem-password-reset-1.1.1...aem-password-reset-2.0.0
+[1.1.1]: https://github.com/shinesolutions/aem-password-reset/compare/aem-password-reset-1.1.0...aem-password-reset-1.1.1
+[1.1.0]: https://github.com/shinesolutions/aem-password-reset/compare/aem-password-reset-1.0.2...aem-password-reset-1.1.0
+[1.0.2]: https://github.com/shinesolutions/aem-password-reset/compare/aem-password-reset-1.0.1...aem-password-reset-1.0.2
+[1.0.1]: https://github.com/shinesolutions/aem-password-reset/compare/aem-password-reset-0.0.1...aem-password-reset-1.0.1
+[0.0.1]: https://github.com/shinesolutions/aem-password-reset/releases/tag/aem-password-reset-0.0.1
