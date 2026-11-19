@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Upgrade aem-platform-buildenv to 6.7.0, which has RTK 4.4.0
 - Use the RTK xml resource type for the pom.xml version
 - Upgrade release-action to 2.2.0
+- Upgrade junit from 4.12 to 4.13.2 (CVE-2020-15250)
 
 ## [2.0.0] - 2026-10-27
 ### Added
